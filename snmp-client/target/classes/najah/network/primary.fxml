@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="707.0" prefWidth="1198.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="najah.network.PrimaryController">
+   <children>
+      <Pane prefHeight="707.0" prefWidth="386.0" style="-fx-background-color: #999;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="6.0" prefHeight="72.0" prefWidth="372.0" text="SNMP Manager Client" textAlignment="CENTER" textFill="#2929ff">
+               <font>
+                  <Font name="Imprint MT Shadow" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="42.0" layoutY="89.0" prefHeight="28.0" prefWidth="114.0" text="Admin Name: ">
+               <font>
+                  <Font name="Times New Roman" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="adminNameLabel" layoutX="169.0" layoutY="89.0" prefHeight="28.0" prefWidth="128.0" text="Amro Sous">
+               <font>
+                  <Font name="SimSun" size="18.0" />
+               </font>
+            </Label>
+            <Separator layoutX="14.0" layoutY="166.0" prefHeight="3.0" prefWidth="349.0" />
+            <TextField fx:id="agentIpField" disable="true" layoutX="144.0" layoutY="187.0" prefHeight="20.0" prefWidth="179.0" text="127.0.0.1">
+               <font>
+                  <Font name="SimSun" size="18.0" />
+               </font>
+            </TextField>
+            <Separator layoutX="16.0" layoutY="653.0" prefHeight="3.0" prefWidth="349.0" />
+            <Button fx:id="editButton" layoutX="188.0" layoutY="346.0" mnemonicParsing="false" onAction="#editButtonPressed" text="Edit">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="applyButton" disable="true" layoutX="276.0" layoutY="346.0" mnemonicParsing="false" onAction="#applyButtonPressed" text="Apply">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="282.0" layoutY="668.0" mnemonicParsing="false" onAction="#signoutButtonPressed" text="Sign out" />
+            <Label layoutX="42.0" layoutY="125.0" prefHeight="28.0" prefWidth="114.0" text="Admin ID: ">
+               <font>
+                  <Font name="Times New Roman" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="adminIdLabel" layoutX="167.0" layoutY="125.0" prefHeight="28.0" prefWidth="100.0" text="12028268">
+               <font>
+                  <Font name="SimSun" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="29.0" layoutY="189.0" prefHeight="28.0" prefWidth="94.0" text="Agent IP: ">
+               <font>
+                  <Font name="Times New Roman" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="29.0" layoutY="233.0" prefHeight="33.0" prefWidth="153.0" text="Community (Read):">
+               <font>
+                  <Font name="Times New Roman" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="30.0" layoutY="284.0" prefHeight="33.0" prefWidth="153.0" text="Community (R/W):">
+               <font>
+                  <Font name="Times New Roman" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="communityRField" disable="true" layoutX="193.0" layoutY="231.0" prefHeight="25.0" prefWidth="165.0" text="public">
+               <font>
+                  <Font name="SimSun" size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="communityRWField" disable="true" layoutX="193.0" layoutY="282.0" prefHeight="28.0" prefWidth="165.0" text="publicRW">
+               <font>
+                  <Font name="SimSun" size="18.0" />
+               </font>
+            </TextField>
+            <ScrollPane fx:id="logScrollPane" layoutX="19.0" layoutY="450.0" prefHeight="192.0" prefWidth="349.0" style="-fx-background-color: #999;">
+               <content>
+                  <TextFlow fx:id="loggerArea" disable="true" prefHeight="188.0" prefWidth="346.0" style="-fx-background-color: #ddd;">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding></TextFlow>
+               </content>
+            </ScrollPane>
+            <Separator layoutX="16.0" layoutY="401.0" prefHeight="3.0" prefWidth="349.0" />
+            <Label fx:id="adminNameLabel1" layoutX="16.0" layoutY="423.0" prefHeight="20.0" prefWidth="100.0" text="Logger" textFill="#252424">
+               <font>
+                  <Font name="SimSun" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="280.0" prefHeight="688.0" prefWidth="813.0" style="-fx-background-color: #ddd;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TabPane layoutY="25.0" prefHeight="663.0" prefWidth="809.0" tabClosingPolicy="UNAVAILABLE" tabMinHeight="30.0" tabMinWidth="100.0">
+              <tabs>
+                <Tab text="System Group">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button layoutX="42.0" layoutY="21.0" mnemonicParsing="false" onAction="#getSystemGroupPressed" prefHeight="39.0" prefWidth="136.0" text="Get System Group">
+                                 <font>
+                                    <Font name="Times New Roman" size="14.0" />
+                                 </font></Button>
+                              <Label fx:id="sysContact" layoutX="90.0" layoutY="87.0" prefHeight="28.0" prefWidth="120.0" text="sysContact:">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="90.0" layoutY="149.0" prefHeight="28.0" prefWidth="108.0" text="sysDescr:">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="89.0" layoutY="215.0" prefHeight="28.0" prefWidth="121.0" text="sysLocation:">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="88.0" layoutY="285.0" prefHeight="28.0" prefWidth="106.0" text="sysName:">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="89.0" layoutY="342.0" prefHeight="28.0" prefWidth="121.0" text="sysObjectID:">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="89.0" layoutY="408.0" prefHeight="28.0" prefWidth="121.0" text="sysUpTime:">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="sysContactField" layoutX="218.0" layoutY="84.0" prefHeight="32.0" prefWidth="386.0">
+                                 <font>
+                                    <Font name="SimSun" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="sysDescrField" editable="false" layoutX="218.0" layoutY="147.0" prefHeight="32.0" prefWidth="551.0">
+                                 <font>
+                                    <Font name="SimSun" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="sysLocationField" layoutX="218.0" layoutY="213.0" prefHeight="32.0" prefWidth="386.0">
+                                 <font>
+                                    <Font name="SimSun" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="sysNameField" layoutX="218.0" layoutY="279.0" prefHeight="32.0" prefWidth="386.0">
+                                 <font>
+                                    <Font name="SimSun" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="sysObjectIDField" editable="false" layoutX="218.0" layoutY="338.0" prefHeight="32.0" prefWidth="386.0">
+                                 <font>
+                                    <Font name="SimSun" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="sysUpTimeField" editable="false" layoutX="218.0" layoutY="406.0" prefHeight="32.0" prefWidth="386.0">
+                                 <font>
+                                    <Font name="SimSun" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <Button layoutX="664.0" layoutY="85.0" mnemonicParsing="false" onAction="#postSysContactPressed" text="Change">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="664.0" layoutY="214.0" mnemonicParsing="false" onAction="#postSysLocationPressed" text="Change">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="664.0" layoutY="280.0" mnemonicParsing="false" onAction="#postSysNamePressed" text="Change">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Button>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="TCP Table">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button layoutX="665.0" layoutY="25.0" mnemonicParsing="false" onAction="#getTCPTablePressed" prefHeight="33.0" prefWidth="121.0" text="Get TCP Table">
+                                 <font>
+                                    <Font name="Times New Roman" size="14.0" />
+                                 </font>
+                              </Button>
+                              <ScrollPane layoutX="23.0" layoutY="73.0" prefHeight="539.0" prefWidth="763.0">
+                                 <content>
+                                    <TableView fx:id="tcpTable" prefHeight="536.0" prefWidth="760.0">
+                                      <columns>
+                                        <TableColumn prefWidth="41.0" text="#" />
+                                        <TableColumn prefWidth="101.0" text="tcpConnState" />
+                                          <TableColumn prefWidth="124.0" text="tcpConnRemPort" />
+                                          <TableColumn prefWidth="169.0" text="tcpConnRemAddress" />
+                                          <TableColumn prefWidth="134.0" text="tcpConnLocalPort" />
+                                          <TableColumn prefWidth="190.0" text="tcpConnLocalAddress" />
+                                      </columns>
+                                    </TableView>
+                                 </content>
+                              </ScrollPane>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="ARP Table">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ScrollPane layoutX="15.0" layoutY="54.0" prefHeight="570.0" prefWidth="769.0">
+                                 <content>
+                                    <TableView fx:id="arpTable" prefHeight="568.0" prefWidth="766.0">
+                                       <columns>
+                                          <TableColumn prefWidth="41.0" text="#" />
+                                          <TableColumn prefWidth="101.0" text="tcpConnState" />
+                                          <TableColumn prefWidth="124.0" text="tcpConnRemPort" />
+                                          <TableColumn prefWidth="169.0" text="tcpConnRemAddress" />
+                                          <TableColumn prefWidth="134.0" text="tcpConnLocalPort" />
+                                          <TableColumn prefWidth="190.0" text="tcpConnLocalAddress" />
+                                       </columns>
+                                    </TableView>
+                                 </content>
+                              </ScrollPane>
+                              <Button layoutX="647.0" layoutY="14.0" mnemonicParsing="false" onAction="#getARPTablePressed" prefHeight="33.0" prefWidth="121.0" text="Get ARP Table">
+                                 <font>
+                                    <Font name="Times New Roman" size="14.0" />
+                                 </font>
+                              </Button>
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="SNMP Statistics">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ScrollPane layoutX="22.0" layoutY="54.0" prefHeight="569.0" prefWidth="761.0">
+                                 <content>
+                                    <TableView fx:id="snmpStatisticsTable" prefHeight="566.0" prefWidth="759.0">
+                                       <columns>
+                                          <TableColumn prefWidth="41.0" text="#" />
+                                          <TableColumn prefWidth="101.0" text="tcpConnState" />
+                                          <TableColumn prefWidth="124.0" text="tcpConnRemPort" />
+                                          <TableColumn prefWidth="169.0" text="tcpConnRemAddress" />
+                                          <TableColumn prefWidth="134.0" text="tcpConnLocalPort" />
+                                          <TableColumn prefWidth="190.0" text="tcpConnLocalAddress" />
+                                       </columns>
+                                    </TableView>
+                                 </content>
+                              </ScrollPane>
+                              <Button layoutX="624.0" layoutY="14.0" mnemonicParsing="false" onAction="#getSNMPStatisticsPressed" prefHeight="33.0" prefWidth="144.0" text="Get SNMP Statistics">
+                                 <font>
+                                    <Font name="Times New Roman" size="14.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

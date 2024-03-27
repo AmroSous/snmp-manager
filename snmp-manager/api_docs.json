@@ -1,0 +1,55 @@
+{
+    "endpoints": [
+        {
+            "name": "System Group",
+            "description": "Fetches details of the system group.",
+            "method": "GET",
+            "url": "http://localhost/snmp-manager/page1.php",
+            "queryParameters": {
+                "agent": "127.0.0.1:161",
+                "communityR": "public"
+            }
+        },
+        {
+            "name": "Update System Group",
+            "description": "update System Group objects: sysName, sysContact, sysLocation.",
+            "method": "POST",
+            "url": "http://localhost/snmp-manager/page1.php",
+            "body": {
+                "agent": "127.0.0.1:161",
+                "communityRW": "publicRW",
+                "{sys object}": "newValue"
+            }
+        },
+        {
+            "name": "TCP Table",
+            "description": "Fetches TCP table data.",
+            "method": "GET",
+            "url": "http://localhost/snmp-manager/page2.php",
+            "queryParameters": {
+                "agent": "127.0.0.1:161",
+                "communityR": "public"
+            }
+        },
+        {
+            "name": "ARP Table",
+            "description": "Displays ARP table content.",
+            "method": "GET",
+            "url": "http://localhost/snmp-manager/page3.php",
+            "queryParameters": {
+                "agent": "127.0.0.1:161",
+                "communityR": "public"
+            }
+        },
+        {
+            "name": "SNMP Statistics",
+            "description": "fetches SNMP Group Statistics.",
+            "method": "GET",
+            "url": "http://localhost/snmp-manager/page4.php",
+            "queryParameters": {
+                "agent": "127.0.0.1:161",
+                "communityR": "public"
+            }
+        }
+    ]
+}
